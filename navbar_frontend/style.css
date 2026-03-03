@@ -1,0 +1,161 @@
+:root {
+    --bg-main: #0b0e14;
+    --bg-dropdown: #161b28;
+    --text-main: #ffffff;
+    --text-muted: #a0a7bc;
+    --accent-blue: #1c448e;
+    --link-color: #a5b4fc;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app-container {
+    min-width: 1024px;
+    max-width: 1900px;
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+    background-color: var(--bg-main);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    position: relative;
+    z-index: 100;
+}
+
+.nav-left, .nav-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
+.logo { font-weight: bold; font-size: 1.2rem; padding: 4px 10px; background: #fff; color: #000; border-radius: 2px; }
+.nav-item { 
+    font-size: 13px;
+    cursor: pointer; 
+    color: var(--text-main);
+    display: flex;
+    height: 70px;
+    padding: 20px 26px 20px 23px;
+    justify-content: center;
+    align-items: center;
+     }
+.btn-logiciels { background: none; border: none; color: white; height: 60px; padding: 0 15px; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+.btn-logiciels.active { background-color: var(--accent-blue); }
+.arrow { font-size: 8px; margin-left: 2px; }
+.icon { font-size: 14px; cursor: pointer; }
+
+.mega-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dropdown);
+    padding: 60px 40px;
+    box-sizing: border-box;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+.mega-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.overlay {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 90;
+    transition: opacity 0.3s;
+}
+
+.overlay.active { opacity: 1; visibility: visible; }
+
+.list-container {
+    display: flex;
+    max-width: 1400px;
+    width: 1233px;
+    margin: 0 auto;
+    gap: 120px;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+
+.infoblock {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.infoblock h2 { font-size: 24px; font-weight: 400; margin: 0; line-height: 1.3; }
+.sidebar-link { color: var(--link-color); text-decoration: none; font-size: 14px; }
+
+.columns-wrapper {
+    display: flex;
+    gap: 40px;
+}
+
+.menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.drupal-item, .skeleton-item {
+    width: 306px; 
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.drupal-item img, .skeleton-img {
+    width: 120px;
+    height: 92px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.item-content, .skeleton-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.item-content h3 { margin: 0; font-size: 14px; font-weight: 600; }
+.item-content p { margin: 0; font-size: 11px; color: var(--text-muted); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.item-content a { color: var(--link-color); font-size: 11px; text-decoration: none; margin-top: 2px; }
+
+.skeleton-img { background-color: #2a3143; }
+.skeleton-title { width: 70%; height: 14px; background-color: #2a3143; border-radius: 2px; }
+.skeleton-text { width: 100%; height: 20px; background-color: #2a3143; border-radius: 2px; }
+.skeleton-link { width: 40%; height: 10px; background-color: #2a3143; border-radius: 2px; }
+
+.pulse { animation: pulse-animation 1.5s infinite ease-in-out; }
+@keyframes pulse-animation { 0% { opacity: 0.5; } 50% { opacity: 1; } 100% { opacity: 0.5; } }
