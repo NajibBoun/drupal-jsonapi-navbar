@@ -38,7 +38,17 @@ body {
     align-items: center; 
     gap: 20px; 
 }
-.logo { font-weight: bold; font-size: 1.2rem; padding: 4px 10px; background: #fff; color: #000; border-radius: 2px; }
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.logo img {
+    max-height: 35px;
+    width: auto;
+}
 .nav-item { 
     font-size: 13px;
     cursor: pointer; 
